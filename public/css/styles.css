@@ -131,6 +131,8 @@ h3,
 .feed-item h3 {
   margin-top: 8px;
   color: #f8fafc;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .table {
