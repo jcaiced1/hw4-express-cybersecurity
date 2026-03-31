@@ -10,36 +10,41 @@
         <li>Back up important files and verify recovery steps.</li>
         <li>Review attachments before opening them.</li>
       </ol>
+      <p>
+        Protection works best when simple habits are repeated consistently. Good security usually
+        comes from layers: stronger authentication, timely patching, reliable backups, and slower,
+        more careful decisions before opening files or links.
+      </p>
     </div>
     <img class="hero-image" src="/img/protection-illustration.svg" alt="Cybersecurity protection illustration">
   </section>
 
   <section class="panel">
-    <h2>File Types Worth Double-Checking</h2>
+    <h2>Defense Strategy</h2>
     <p class="section-note">
-      These file signatures come from backend package data and help connect protection habits with the kinds of files users actually receive.
+      Protection is stronger when technical controls and user habits support each other.
     </p>
-    <div class="table-responsive">
-      <table class="table table-dark table-striped align-middle mb-0">
-        <thead>
-          <tr>
-            <th>MIME Type</th>
-            <th>Extensions</th>
-            <th>Charset</th>
-            <th>Source</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% attachmentExamples.forEach((item) => { %>
-            <tr>
-              <td><%= item.type %></td>
-              <td><%= item.extensions.join(", ") %></td>
-              <td><%= item.charset %></td>
-              <td><%= item.source %></td>
-            </tr>
-          <% }) %>
-        </tbody>
-      </table>
+    <div class="card-grid">
+      <article class="data-card">
+        <p class="card-label">Authentication</p>
+        <h3>Reduce account compromise</h3>
+        <p>Unique passwords and MFA make credential theft less useful to attackers.</p>
+      </article>
+      <article class="data-card">
+        <p class="card-label">Updates</p>
+        <h3>Close known weaknesses</h3>
+        <p>Regular updates reduce exposure to vulnerabilities that attackers already understand.</p>
+      </article>
+      <article class="data-card">
+        <p class="card-label">Backups</p>
+        <h3>Recover faster</h3>
+        <p>Backups limit damage from ransomware, deletion, and accidental data loss.</p>
+      </article>
+      <article class="data-card">
+        <p class="card-label">Verification</p>
+        <h3>Pause before opening files</h3>
+        <p>Reviewing links, senders, and attachments helps stop phishing before malware is delivered.</p>
+      </article>
     </div>
   </section>
 </main>
