@@ -31,10 +31,10 @@
   </section>
 
   <section class="panel">
-    <h2>Incidents a Team Would Prioritize</h2>
+    <h2>Examples to Respond to First</h2>
     <p class="section-note">
       Source status: <%= apiLive ? "live CISA feed reached successfully" : "showing fallback records because the live request failed" %>.
-      These examples fit incident response because known exploited vulnerabilities often require immediate triage, containment, and patching.
+      These examples matter in incident response because they usually need quick review, containment, and patching.
     </p>
     <div class="card-grid">
       <% recentCases.forEach((item) => { %>
