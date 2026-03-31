@@ -147,9 +147,33 @@ h3,
   padding: 20px 0 28px;
 }
 
+.footer-grid {
+  align-items: center;
+}
+
+.footer-copy p,
+.footer-meta p {
+  margin-bottom: 6px;
+}
+
+.footer-meta {
+  text-align: center;
+}
+
+.footer-logo-shell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 18px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.96);
+  min-height: 92px;
+}
+
 .footer-logo {
   width: 180px;
   object-fit: contain;
+  display: block;
 }
 
 @media (max-width: 768px) {
@@ -163,5 +187,9 @@ h3,
 
   .panel {
     padding: 18px;
+  }
+
+  .footer-meta {
+    text-align: left;
   }
 }
