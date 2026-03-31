@@ -5,10 +5,13 @@
     <div>
       <h2>Overview</h2>
       <p>
-        This site keeps the same cybersecurity topic from HW1, but now it runs on Express.
+        This site keeps the original HW1 cybersecurity topic, but now it runs on Express and
+        shows dynamic data from both a Web API and a Node package.
       </p>
       <p>
-        I also added real data from the CISA API and the mime-db package.
+        Instead of adding random data, the dynamic sections focus on two things that match this topic:
+        current exploited vulnerabilities and common file types that users should recognize before
+        opening attachments or downloads.
       </p>
     </div>
     <img class="hero-image" src="/img/cybersecurity-shield.png" alt="Cybersecurity shield illustration">
@@ -17,9 +20,9 @@
   <section class="panel">
     <div class="section-heading">
       <div>
-        <h2>Recent Threat Examples</h2>
+        <h2>Current Threat Intelligence</h2>
         <p class="section-note">
-          These are recent vulnerability examples from CISA.
+          These are recent entries from the CISA catalog of vulnerabilities that are known to be actively exploited.
         </p>
       </div>
       <span class="badge text-bg-dark">Catalog items shown: <%= kevFeed.vulnerabilities.length %></span>
