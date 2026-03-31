@@ -158,6 +158,12 @@ h3,
 
 .footer-meta {
   text-align: center;
+  white-space: nowrap;
+}
+
+.footer-divider {
+  opacity: 0.55;
+  margin: 0 8px;
 }
 
 .footer-logo-shell {
