@@ -1,0 +1,40 @@
+<%- include("partials/header", { title, navLinks, activePath }) %>
+
+<main class="container py-4">
+  <section class="panel hero-panel">
+    <div>
+      <h2>Main attacks</h2>
+      <ul>
+        <li><strong>Phishing:</strong> fake messages that pressure users into opening links or attachments.</li>
+        <li><strong>Malware:</strong> malicious software that steals data, damages systems, or opens backdoors.</li>
+        <li><strong>Ransomware:</strong> attacks that encrypt files and demand payment for recovery.</li>
+      </ul>
+      <p>
+        Social engineering is still a major entry point because attackers benefit from urgency,
+        curiosity, and routine business habits.
+      </p>
+    </div>
+    <img class="hero-image" src="/img/threats-illustration.svg" alt="Cybersecurity threats illustration">
+  </section>
+
+  <section class="panel">
+    <h2>CISA Known Exploited Vulnerabilities</h2>
+    <p class="section-note">
+      These examples come from the backend route calling the CISA KEV JSON feed.
+    </p>
+    <% kevFeed.vulnerabilities.forEach((item) => { %>
+      <article class="feed-item">
+        <div class="feed-item-top">
+          <strong><%= item.cveID %></strong>
+          <span><%= item.dateAdded %></span>
+        </div>
+        <h3><%= item.vulnerabilityName %></h3>
+        <p><strong>Product:</strong> <%= item.vendorProject %> - <%= item.product %></p>
+        <p><%= item.shortDescription %></p>
+        <p><strong>Ransomware use:</strong> <%= item.knownRansomwareCampaignUse %></p>
+      </article>
+    <% }) %>
+  </section>
+</main>
+
+<%- include("partials/footer") %>

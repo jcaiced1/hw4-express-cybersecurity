@@ -1,0 +1,18 @@
+{
+  "name": "hw4-express-cybersecurity",
+  "version": "1.0.0",
+  "description": "HW4 Express app based on HW1 cybersecurity content",
+  "type": "module",
+  "main": "index.mjs",
+  "scripts": {
+    "start": "node index.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "ejs": "^5.0.1",
+    "express": "^5.2.1",
+    "mime-db": "^1.54.0"
+  }
+}

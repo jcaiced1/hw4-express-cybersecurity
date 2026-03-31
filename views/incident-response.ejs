@@ -1,0 +1,51 @@
+<%- include("partials/header", { title, navLinks, activePath }) %>
+
+<main class="container py-4">
+  <section class="panel hero-panel">
+    <div>
+      <h2>Response phases</h2>
+      <table class="table table-bordered table-dark mb-0">
+        <thead>
+          <tr>
+            <th>Phase</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Identify</td>
+            <td>Confirm what happened, what systems were affected, and how far the incident spread.</td>
+          </tr>
+          <tr>
+            <td>Contain</td>
+            <td>Limit damage by isolating devices, accounts, or exposed services.</td>
+          </tr>
+          <tr>
+            <td>Recover</td>
+            <td>Restore services, monitor for recurrence, and document lessons learned.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <img class="hero-image" src="/img/incident-response-illustration.svg" alt="Incident response illustration">
+  </section>
+
+  <section class="panel">
+    <h2>Incident Examples to Review First</h2>
+    <p class="section-note">
+      Source status: <%= apiLive ? "live CISA feed reached successfully" : "showing fallback records because the live request failed" %>
+    </p>
+    <div class="card-grid">
+      <% recentCases.forEach((item) => { %>
+        <article class="data-card">
+          <p class="card-label"><%= item.cveID %></p>
+          <h3><%= item.product %></h3>
+          <p><%= item.shortDescription %></p>
+          <p><strong>Required action:</strong> <%= item.requiredAction %></p>
+        </article>
+      <% }) %>
+    </div>
+  </section>
+</main>
+
+<%- include("partials/footer") %>

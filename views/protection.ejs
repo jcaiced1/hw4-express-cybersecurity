@@ -1,0 +1,47 @@
+<%- include("partials/header", { title, navLinks, activePath }) %>
+
+<main class="container py-4">
+  <section class="panel hero-panel">
+    <div>
+      <h2>Basic checklist</h2>
+      <ol>
+        <li>Use unique passwords and enable multi-factor authentication.</li>
+        <li>Update operating systems, browsers, and apps consistently.</li>
+        <li>Back up important files and verify recovery steps.</li>
+        <li>Review attachments before opening them.</li>
+      </ol>
+    </div>
+    <img class="hero-image" src="/img/protection-illustration.svg" alt="Cybersecurity protection illustration">
+  </section>
+
+  <section class="panel">
+    <h2>Node Package Data: mime-db</h2>
+    <p class="section-note">
+      The table below is generated from the <code>mime-db</code> package in the backend.
+    </p>
+    <div class="table-responsive">
+      <table class="table table-dark table-striped align-middle mb-0">
+        <thead>
+          <tr>
+            <th>MIME Type</th>
+            <th>Extensions</th>
+            <th>Charset</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% attachmentExamples.forEach((item) => { %>
+            <tr>
+              <td><%= item.type %></td>
+              <td><%= item.extensions.join(", ") %></td>
+              <td><%= item.charset %></td>
+              <td><%= item.source %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<%- include("partials/footer") %>

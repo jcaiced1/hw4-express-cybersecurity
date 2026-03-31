@@ -1,0 +1,69 @@
+<%- include("partials/header", { title, navLinks, activePath }) %>
+
+<main class="container py-4">
+  <section class="panel hero-panel">
+    <div>
+      <h2>Overview</h2>
+      <p>
+        This site keeps the original HW1 cybersecurity topic, but now it runs on Express and
+        shows dynamic data from both a Web API and a Node package.
+      </p>
+      <p>
+        The CISA vulnerability feed below highlights examples of software flaws that are known
+        to be actively exploited. The package section uses <code>mime-db</code> to show real
+        attachment and media-type metadata that matters when reviewing files and email content.
+      </p>
+    </div>
+    <img class="hero-image" src="/img/cybersecurity-shield.png" alt="Cybersecurity shield illustration">
+  </section>
+
+  <section class="panel">
+    <div class="section-heading">
+      <div>
+        <h2>Live Threat Snapshot</h2>
+        <p class="section-note">
+          Source: <%= kevFeed.sourceLive ? "live CISA feed" : "fallback sample because the live request was unavailable" %>
+        </p>
+      </div>
+      <span class="badge text-bg-dark">Catalog items shown: <%= kevFeed.vulnerabilities.length %></span>
+    </div>
+
+    <div class="card-grid">
+      <% kevFeed.vulnerabilities.forEach((item) => { %>
+        <article class="data-card">
+          <p class="card-label"><%= item.cveID %></p>
+          <h3><%= item.product %></h3>
+          <p><strong>Vendor:</strong> <%= item.vendorProject %></p>
+          <p><strong>Added:</strong> <%= item.dateAdded %></p>
+          <p><%= item.vulnerabilityName %></p>
+        </article>
+      <% }) %>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Package Data Preview</h2>
+    <div class="table-responsive">
+      <table class="table table-dark table-striped align-middle mb-0">
+        <thead>
+          <tr>
+            <th>MIME Type</th>
+            <th>Extensions</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% packageExamples.forEach((item) => { %>
+            <tr>
+              <td><%= item.type %></td>
+              <td><%= item.extensions.join(", ") %></td>
+              <td><%= item.source %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<%- include("partials/footer") %>
